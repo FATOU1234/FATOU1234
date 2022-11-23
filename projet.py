@@ -23,7 +23,18 @@ import streamlit as st
 
 # display(df.tail(10))
 # df.info()
-
+def load_image(image_name: str) -> Image:
+    """Displays an image.
+    Parameters
+    ----------
+    image_name : str
+        Local path of the image.
+    Returns
+    -------
+    Image
+        Image to be displayed.
+    """
+    return Image.open(Path(get_project_root()) / f"references/{image_name}")
 
 ###MAIN###
 st.set_page_config(page_title='Projet Eco2mix',layout="wide")
@@ -37,6 +48,9 @@ page = st.sidebar.radio("Sommaire", pages)
 st.sidebar.markdown('---')
 st.sidebar.write('**Fatoumata Bintou TRAORE**')
 #st.sidebar.image("datascientest.png", width=200)
+st.sidebar.image(load_image("logo.png"), use_column_width=True)
+
+
 
 # st.markdown('''
     # <a href="https://datascientest.com">
