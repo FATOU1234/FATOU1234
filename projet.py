@@ -17,7 +17,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error
 
 #DATASET
-df = pd.read_csv('eco2mix-regional-cons-def.csv', sep =',', error_bad_lines=False) 
+#df = pd.read_csv('eco2mix-regional-cons-def.csv', sep =',', error_bad_lines=False) 
 
 #Affichage des dix premières lignes.
 
@@ -60,23 +60,6 @@ st.sidebar.write('BootCamp - Septembre 2022')
    # st.header("An owl")
    # st.image("https://static.streamlit.io/examples/owl.jpg")
 
-
-
-import time
-
-'Starting a long computation...'
-
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
-
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.1)
-
-'...and now we\'re done!'
 if page == "Introduction":    
     st.title("Présentation du projet")
     #st.subheader("Implantation géographique des éoliennes et des stations météorologiques utilisées")
