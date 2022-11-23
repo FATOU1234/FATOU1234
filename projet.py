@@ -29,6 +29,16 @@ from PIL import Image
 
 # display(df.tail(10))
 # df.info()
+
+def get_project_root() -> str:
+    """Returns project root path.
+    Returns
+    -------
+    str
+        Project root path.
+    """
+    return str(Path(__file__).parent.parent.parent)
+
 def load_image(image_name: str) -> Image:
     """Displays an image.
     Parameters
