@@ -2,19 +2,19 @@
 # streamlit run Streamlit.py
 
 import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import datetime as dt
-import seaborn as sns
-from sklearn import model_selection, preprocessing
-from sklearn.preprocessing import StandardScaler
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import datetime as dt
+# import seaborn as sns
+# from sklearn import model_selection, preprocessing
+# from sklearn.preprocessing import StandardScaler
 
-from sklearn.model_selection import cross_val_predict, cross_val_score, cross_validate, train_test_split
-from sklearn.linear_model import LinearRegression, LassoCV, RidgeCV
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.metrics import mean_squared_error
+# from sklearn.model_selection import cross_val_predict, cross_val_score, cross_validate, train_test_split
+# from sklearn.linear_model import LinearRegression, LassoCV, RidgeCV
+# from sklearn.ensemble import RandomForestRegressor
+# from sklearn.neighbors import KNeighborsRegressor
+# from sklearn.metrics import mean_squared_error
 
 #DATASET
 #df = pd.read_csv('eco2mix-regional-cons-def.csv', sep =',', error_bad_lines=False) 
