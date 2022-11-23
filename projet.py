@@ -15,7 +15,13 @@ import streamlit as st
 # from sklearn.ensemble import RandomForestRegressor
 # from sklearn.neighbors import KNeighborsRegressor
 # from sklearn.metrics import mean_squared_error
+import io
+from pathlib import Path
 
+import pandas as pd
+import requests
+import toml
+from PIL import Image
 #DATASET
 #df = pd.read_csv('eco2mix-regional-cons-def.csv', sep =',', error_bad_lines=False) 
 
