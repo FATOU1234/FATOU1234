@@ -28,7 +28,7 @@ import streamlit as st
 ###MAIN###
 st.set_page_config(page_title='Projet Eco2mix',layout="wide")
 
-st.sidebar.image('LOGO.png', width=180)
+#st.sidebar.image('LOGO.png', width=180)
 st.sidebar.title('Projet Energie Eco2mix')
 
 pages=["Introduction","Exploration du jeu de données","Statistiques et indicateurs","Exploration de donnée externe","Conclusion"]
@@ -36,7 +36,7 @@ page = st.sidebar.radio("Sommaire", pages)
 
 st.sidebar.markdown('---')
 st.sidebar.write('**Fatoumata Bintou TRAORE**')
-st.sidebar.image("datascientest.png", width=200)
+#st.sidebar.image("datascientest.png", width=200)
 
 # st.markdown('''
     # <a href="https://datascientest.com">
