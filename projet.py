@@ -50,7 +50,7 @@ def load_image(image_name: str) -> Image:
     Image
         Image to be displayed.
     """
-    return Image.open(Path(get_project_root()) / f"references/{image_name}")
+    return Image.open(f"{image_name}")
 
 ###MAIN###
 st.set_page_config(page_title='Projet Eco2mix',layout="wide")
