@@ -245,25 +245,11 @@ if page == "Visualisation":
         plt.title("Part de l'exportation de l'énergie  par région",fontsize=16, color='black');
         plt.legend();
         st.write(fig)
-        col1, col2, col3 = st.columns(3)
-
-        with col1:
-           st.header("A cat")
-           st.image("https://static.streamlit.io/examples/cat.jpg")
-
-        with col2:
-           st.header("A dog")
-           st.image("https://static.streamlit.io/examples/dog.jpg")
-
-        with col3:
-           st.header("An owl")
-           st.image("https://static.streamlit.io/examples/owl.jpg")
 
     ConsoJoursFeries = st.checkbox("Visualisation de la consommation pendant les jours fériés")
     if ConsoJoursFeries:
         #visualisation de la consommation pendant les jours fériés.
         data=pd.merge(df,jour_f,on='Date',how='left')
-        st.write(data['date','jour_ferie'].unique())
         fig=plt.figure(figsize=(10,10))
         sns.barplot(x=data['jour_ferie'], y=data['Consommation (MW)']);
         plt.xticks(np.arange(12), ['jours non ferié','1er janvier' ,'Lundi de Pâques' ,'1er mai' ,'8 mai', 'Ascension',
