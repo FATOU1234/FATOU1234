@@ -16,9 +16,6 @@ plotly.express
 image
 sklearn
 metrics
-mean_squared_error
-mean_absolute_error
-mean_absolute_percentage_error
 LogisticRegression
 model_selection
 pickle
