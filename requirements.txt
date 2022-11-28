@@ -13,7 +13,7 @@ joblib
 scikit-learn
 model_selection
 plotly.express
-Image
+PIL
 sklearn
 metrics
 mean_squared_error
