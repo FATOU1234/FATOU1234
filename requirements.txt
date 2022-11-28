@@ -11,7 +11,7 @@ matplotlib
 plotly
 joblib
 scikit-learn
-sklearn.model_selection
+model_selection
 plotly.express
 PIL
 sklearn.metrics
