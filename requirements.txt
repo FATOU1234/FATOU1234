@@ -17,5 +17,4 @@ image
 sklearn
 metrics
 model_selection
-pickle
 scikit-learn==1.0.2
