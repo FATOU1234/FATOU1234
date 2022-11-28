@@ -16,6 +16,5 @@ plotly.express
 image
 sklearn
 metrics
-LogisticRegression
 model_selection
 pickle
