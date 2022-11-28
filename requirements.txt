@@ -13,8 +13,9 @@ joblib
 scikit-learn
 model_selection
 plotly.express
-PIL
-sklearn.metrics
+Image
+sklearn
+metrics
 mean_squared_error
 mean_absolute_error
 mean_absolute_percentage_error
