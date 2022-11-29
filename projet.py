@@ -1,27 +1,20 @@
-# Pour le faire tourner: avoir les sources data dans le même dossier. Ouvrir une commande et taper:
-# streamlit run Streamlit.py
+#----------------------------------------------------------------------------
+# Created By  : Fatoumata Bintou TRAORE
+# Created Date: 20/11/2022
+# version ='1.0'
+# Description : Projet Energie Eco2mix dans le cadre de la formation DATASCIENTEST BootCamp - Septembre 2022
+#               https://fatou1234-fatou1234-projet-d0oaui.streamlit.app/
+# status = "Production"# streamlit run projet.py
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Imports
+# ---------------------------------------------------------------------------
 
 import streamlit as st
-# import pandas as pd
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import datetime as dt
-# import seaborn as sns
-# from sklearn import model_selection, preprocessing
-# from sklearn.preprocessing import StandardScaler
-
 from sklearn.model_selection import cross_val_predict, cross_val_score, cross_validate, train_test_split
-# from sklearn.linear_model import LinearRegression, LassoCV, RidgeCV
-# from sklearn.ensemble import RandomForestRegressor
-# from sklearn.neighbors import KNeighborsRegressor
-# from sklearn.metrics import mean_squared_error
-# import io
-# from pathlib import Path
-
 import pandas as pd
 import numpy as np
-# import requests
-# import toml
 from PIL import Image
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -32,15 +25,8 @@ from sklearn import model_selection
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_absolute_percentage_error
-from sklearn.linear_model import LogisticRegression
 import pickle
-#DATASET
-#df = pd.read_csv('eco2mix-regional-cons-def.csv', sep =',', error_bad_lines=False) 
 
-#Affichage des dix premières lignes.
-
-# display(df.tail(10))
-# df.info()
 def load_image(image_name: str) -> Image:
     """Displays an image.
     Parameters
@@ -54,7 +40,7 @@ def load_image(image_name: str) -> Image:
     """
     return Image.open(f"{image_name}")
 
-
+#DATASET
 @st.cache(allow_output_mutation=True)
 #@st.cache(suppress_st_warning=True)
 def fetch_and_clean_data():
@@ -109,7 +95,7 @@ st.set_page_config(page_title='Projet Eco2mix',layout="wide")
 st.sidebar.image(load_image("logo.png"), width=180)
 st.sidebar.title('Projet Energie Eco2mix')
 
-pages=["Introduction","Exploration du jeu de données","Visualisation","Modélisation","Statistiques et indicateurs","Exploration de donnée externe","Conclusion"]
+pages=["Introduction","Exploration du jeu de données","Visualisation","Modélisation","Conclusion"]
 page = st.sidebar.radio("Sommaire", pages)
 
 st.sidebar.markdown('---')
@@ -119,7 +105,7 @@ st.sidebar.image(load_image("datascientest.png"), width=200)
 with st.spinner('Chargement des données des dataframes en cours...'):
     df_eco2mix_init,df,jour_f,temp=fetch_and_clean_data() 
     #st.balloons()
-#    st.success('Done!')
+    #st.success('Done!')
 
 st.sidebar.write('BootCamp - Septembre 2022')
 
@@ -262,6 +248,7 @@ if page == "Visualisation":
 if page == "Modélisation":
     st.header("Modélisation")
     st.success("Afin d'éviter le temps d'entraînement des modèles, nous les avons entraîné et enregistré en amont à l'aide du module **pickle**")
+    st.success("Nous avons limité le périmètre à celui de l'**Ile de France*** dans la mise en place de nos modèles")    
     
     temp_IDF=temp[temp["Région"]=='Île-de-France']
     data_IDF=df[df['Région']=='Île-de-France']
@@ -345,9 +332,10 @@ if page == "Modélisation":
         return score_test, score_train
     
     model={ "Choisissez le modèle à appliquer" : None,
+           "GradientBoostingRegressor" : pickle.load(open("GradientBoostingRegressor.joblib", 'rb')),
             "LinearRegression" : pickle.load(open("LinearRegression.joblib", 'rb')),
-            "RandomForestRegressor" : pickle.load(open("RandomForestRegressor.joblib", 'rb')),
-            "KNeighborsRegressor" : pickle.load(open("KNeighborsRegressor.joblib", 'rb'))
+            "KNeighborsRegressor" : pickle.load(open("KNeighborsRegressor.joblib", 'rb')),
+            "RandomForestRegressor" : pickle.load(open("RandomForestRegressor.joblib", 'rb'))
            }
     mod=st.selectbox("",model.keys())
     
